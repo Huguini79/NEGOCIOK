@@ -1,0 +1,20 @@
+<form [formGroup]="formulario" (ngSubmit)="Enviar()">
+    <label>Introduce el nombre del plato: </label>
+    <input type="text" formControlName="nombrePlato">
+    <br>
+    <label>Introduce el precio del plato: </label>
+    <input type="number" formControlName="precioPlato">
+    <br>
+    <label>Introduce la imagen del plato (opcional)</label>
+    <input type="file" id="imagen_plato" (change)="Cambio($event)">
+
+    <br>
+
+    @if (imagenPlato())
+    {
+        <img [src]="imagenPlato()" style="height: 100px; width: 200px;">
+    }
+
+    <br>
+    <button type="submit">Enviar</button>
+</form>

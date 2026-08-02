@@ -1,0 +1,30 @@
+<style>
+  :host
+  {
+    display: flex;
+  }
+</style>
+@if (total == 0)
+{
+  <h1>Total: Ninguno</h1>
+
+} @else
+{
+  <h1>Total: {{ total }} €</h1>
+}
+@for (plato of platos; track plato)
+{
+  <div>
+    <img [src]="plato.imagenPlato" height="50px">
+    <br>
+    <label>{{ plato.nombrePlato }}</label>
+    <br>
+    <label>Precio: {{ plato.precioPlato }} €</label>
+    <br>
+    <button (click)="Anadir(plato)">Seleccionar</button>
+  </div>
+}
+<br>
+<textarea id="platos_seleccionados" style="width: 300px;">
+
+</textarea>

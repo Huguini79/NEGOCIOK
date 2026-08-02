@@ -1,0 +1,18 @@
+<style>
+    :host
+    {
+        display: flex;
+    }
+</style>
+@for (plato of platos_co; track plato)
+{
+    <div>
+        <img [src]="plato.imagenPlato" height="50px">
+        <br>
+        <label>{{ plato.nombrePlato }}</label>
+        <br>
+        <label>Precio: {{ plato.precioPlato }} €</label>
+        <br>
+        <button style="background-color: red; color: white" (click)="Eliminar(plato)">X</button>
+    </div>
+}
